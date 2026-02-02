@@ -2,7 +2,7 @@
 nixPkgs = ["maven", "jdk21"]
 
 [phases.build]
-cmds = ["./mvnw clean package -DskipTests"]
+cmds = ["chmod +x mvnw", "sh mvnw clean package -DskipTests"]
 
 [phases.start]
 cmd = "java -Dserver.port=$PORT -jar target/AuthApp-0.0.1-SNAPSHOT.jar"
